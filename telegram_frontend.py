@@ -1,8 +1,8 @@
 # telegram_frontend.py
 import telebot
-from backend_downloader import download_video   # імпорт функції бекенду
+from backend_downloader import download_video   
 
-API_TOKEN = "ВСТАВТЕ_ТОКЕН_Бота"
+API_TOKEN = "8342188590:AAFR1c4yQSp1nQvC_aV88WQFoCYtRuOLg-M"
 
 bot = telebot.TeleBot(API_TOKEN)
 
@@ -19,7 +19,7 @@ def handle_url(message):
 
     bot.send_message(message.chat.id, "⏳ Завантажую відео...")
 
-    file_path = download_video(url)   # виклик бекенду
+    file_path = download_video(url)  
 
     if file_path:
         bot.send_document(message.chat.id, open(file_path, "rb"))
